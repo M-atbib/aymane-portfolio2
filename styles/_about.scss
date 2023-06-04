@@ -1,0 +1,42 @@
+.about {
+  margin-top: 50px;
+  &-title {
+    @include Bigtitle($teal, 32px);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &-text {
+    font-family: $text;
+    font-weight: 500;
+    line-height: 1.9;
+    font-size: 16px;
+    color: $gunmetal;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+}
+
+@include media-md {
+  .about {
+    margin-top: 100px;
+    &-title {
+      font-size: 36px;
+      margin-bottom: 25px;
+    }
+
+    &-text {
+      font-size: 18px;
+      line-height: 2;
+    }
+  }
+}
+
+@include media-md {
+  .about {
+    &-title {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+  }
+}

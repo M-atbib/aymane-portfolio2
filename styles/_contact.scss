@@ -1,0 +1,57 @@
+.contact {
+  border: 2px solid $columbia-blue;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+
+  &-title {
+    @include Bigtitle($gunmetal, 30px);
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-family: $text;
+    letter-spacing: 0.03rem;
+    line-height: 1.5;
+    font-size: 16px;
+    color: $teal;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  &-socials {
+    @include flex(row, flex-start, center, 10px);
+
+    .social {
+      font-size: 20px;
+      color: $teal;
+    }
+  }
+}
+
+@include media-md {
+  .contact {
+    padding: 25px;
+    &-title {
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    &-socials {
+      .social {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@include media-lg {
+  .contact {
+    padding: 35px;
+  }
+}

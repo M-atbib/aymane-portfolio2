@@ -1,0 +1,121 @@
+.tools {
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  &-container {
+    &_video {
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    &_list {
+      @include flex(column, center, flex-start, 20px);
+      width: 80%;
+      margin: 40px auto 0 auto;
+
+      &-item {
+        @include flex(row, center, center, 15px);
+        width: 100%;
+
+        &_icons {
+          background-color: $columbia-blue;
+          padding: 15px;
+          border-radius: 50%;
+
+          .icon {
+            color: $gunmetal;
+            font-size: 28px;
+          }
+        }
+
+        &_content {
+          width: 100%;
+          h2 {
+            @include navLinks($gunmetal, 16px);
+            margin-bottom: 10px;
+          }
+          .progress {
+            &-bg {
+              height: 5px;
+              width: 100%;
+              background: $white;
+              border-radius: 10px;
+              z-index: 0;
+            }
+            &-fill {
+              height: 100%;
+              border-radius: 10px;
+              background: $teal;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-md {
+  .tools {
+    &-container {
+      @include flex(row, flex-start, center, 50px);
+      &_video {
+        width: 45%;
+      }
+      &_list {
+        width: 100%;
+        margin-right: 100px;
+      }
+    }
+  }
+}
+
+@include media-lg {
+  .tools {
+    &-container {
+      &_video {
+        width: 35%;
+      }
+
+      &_list-item {
+        gap: 20px;
+        &_icons {
+          padding: 20px;
+          .icon {
+            font-size: 32px;
+          }
+        }
+        &_content {
+          h2 {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-xl {
+  .tools {
+    &-container {
+      &_video {
+        width: 30%;
+      }
+
+      &_list-item {
+        gap: 25px;
+        margin-right: 80px;
+        width: 85%;
+        &_icons {
+          .icon {
+            font-size: 34px;
+          }
+        }
+        &_content {
+          h2 {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}

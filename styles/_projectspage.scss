@@ -1,0 +1,126 @@
+.projectP {
+  &-title {
+    @include Bigtitle($teal, 34px);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &-list {
+    &_content {
+      background: $columbia-blue;
+      border-radius: 25px;
+      position: relative;
+
+      &-video {
+        display: none;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+
+        .close {
+          cursor: pointer;
+          position: absolute;
+          top: -25px;
+          right: -25px;
+          font-size: 24px;
+        }
+      }
+
+      &-thumbnail {
+        position: relative;
+        cursor: pointer;
+
+        .img {
+          border-top-left-radius: 25px;
+          border-top-right-radius: 25px;
+          max-height: 170px;
+          object-fit: cover;
+        }
+
+        .play {
+          position: absolute;
+          top: 60px;
+          left: 135px;
+          width: 50px;
+        }
+      }
+
+      &-desc {
+        padding: 20px;
+
+        h2 {
+          margin-bottom: 15px;
+          @include navLinks($gunmetal, 22px);
+        }
+
+        p {
+          margin-bottom: 10px;
+          @include text($gunmetal);
+        }
+
+        &_tools {
+          @include flex(row, flex-start, center, 10px);
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}
+
+@include media-md {
+  .projectP {
+    &-list {
+      @include flex(row, center, center, 20px);
+      flex-wrap: wrap;
+      margin: 0;
+
+      &_content {
+        width: 290px;
+        height: 400px;
+
+        &-desc {
+          h2 {
+            font-size: 20px;
+          }
+
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-lg {
+  .projectP {
+    &-list {
+      gap: 30px;
+      &_content {
+        width: 310px;
+
+        &-desc {
+          h2 {
+            font-size: 22px;
+          }
+
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-xl {
+  .projectP {
+    &-list {
+      gap: 35px;
+      &_content {
+        width: 330px;
+      }
+    }
+  }
+}

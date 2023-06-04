@@ -1,0 +1,224 @@
+.navbar {
+  padding: 20px;
+  position: relative;
+
+  &-content {
+    @include flex(row, space-between, center, 20px);
+
+    .img {
+      width: 110px;
+    }
+
+    .burger {
+      cursor: pointer;
+      z-index: 50;
+      position: absolute;
+      right: 20px;
+      top: 60px;
+      width: 28px;
+      height: 3px;
+      background: $gunmetal;
+      @include transition-ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        width: 28px;
+        height: 3px;
+        background: $gunmetal;
+        @include transition-ease;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        width: 20px;
+        height: 3px;
+        background: $gunmetal;
+        @include transition-ease;
+      }
+
+      &.active {
+        transform: rotate(720deg);
+        background: transparent;
+
+        &::before {
+          transform: rotate(45deg) translate(5px, 8px);
+        }
+
+        &::after {
+          width: 28px;
+          transform: rotate(-45deg) translate(3px, -7px);
+        }
+      }
+    }
+
+    &_items {
+      visibility: hidden;
+      width: 63%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: $columbia-blue;
+      transform: translateX(100%);
+      @include transition-ease;
+      z-index: 10;
+
+      &.active {
+        visibility: visible;
+        transform: translateX(0);
+      }
+
+      &-links {
+        margin: 140px 35px 250px 35px;
+        .item {
+          @include navLinks($teal, 26px);
+          text-align: left;
+          margin-bottom: 50px;
+        }
+      }
+
+      &-socials {
+        @include flex(row, center, center, 10px);
+
+        .social {
+          font-size: 24px;
+          color: $gunmetal;
+        }
+      }
+    }
+  }
+}
+
+//Responsive for the NAVBAR
+@include media-xs {
+  .navbar {
+    &-content {
+      &_items {
+        width: 60%;
+        &-links {
+          margin: 140px 20px 250px 20px;
+          .item {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-md {
+  .navbar {
+    width: 80%;
+    margin: 20px auto;
+    padding: 0;
+
+    &-content {
+      .img {
+        width: 90px;
+      }
+
+      .burger {
+        display: none;
+      }
+
+      &_items {
+        visibility: visible;
+        transform: translateX(0);
+        background-color: transparent;
+        @include flex(row, center, center, 50px);
+        position: unset;
+        height: fit-content;
+        width: fit-content;
+
+        &-links {
+          @include flex(row, center, center, 25px);
+          margin: 0;
+
+          .item {
+            @include navLinks($gunmetal, 18px);
+            @include transition-ease;
+            margin: 0;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        &-socials {
+          gap: 15px;
+          .social {
+            font-size: 18px;
+            @include transition-ease;
+            &:hover {
+              transform: scale(0.8);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-lg {
+  .navbar {
+    width: 85%;
+    margin: 30px auto;
+
+    &-content {
+      .img {
+        width: 100px;
+      }
+
+      &_items {
+        gap: 100px;
+
+        &-links {
+          gap: 50px;
+
+          .item {
+            font-size: 20px;
+          }
+        }
+
+        &-socials {
+          .social {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-xl {
+  .navbar {
+    &-content {
+      .img {
+        width: 110px;
+      }
+
+      &_items {
+        gap: 200px;
+
+        &-links {
+          gap: 70px;
+
+          .item {
+            font-size: 22px;
+          }
+        }
+
+        &-socials {
+          .social {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}

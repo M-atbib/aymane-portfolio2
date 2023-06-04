@@ -1,0 +1,57 @@
+@import "config";
+@import "navbar";
+@import "hero";
+@import "projects";
+@import "tools";
+@import "projectspage";
+@import "about";
+@import "contact";
+
+body {
+  background: $lavender;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  user-select: none;
+}
+
+.button-gradient {
+  background: linear-gradient(270deg, $columbia-blue 2.8%, $teal 100%);
+  border-radius: 50px;
+  padding: 15px 30px;
+  color: $white;
+  font-family: $text;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.navbar-gradient {
+  position: absolute;
+  width: 854.46px;
+  height: 521.98px;
+  left: 145.67px;
+  top: -300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    39.95% 39.95% at 50% 50%,
+    var(--teal) 0%,
+    #89bad3 45.97%,
+    var(--columbia-blue) 100%
+  );
+  filter: blur(35px);
+  transform: rotate(-12.55deg);
+  z-index: -1;
+}
+
+.title {
+  @include titles($gunmetal);
+  margin-bottom: 50px;
+}
+
+@include media-2xl {
+  main {
+    width: 70%;
+  }
+}

@@ -1,0 +1,57 @@
+.hero {
+  @include flex(column, center, center, 50px);
+  margin-top: 50px;
+  margin-bottom: 100px;
+
+  &-content {
+    &_title {
+      @include Bigtitle($teal, 34px);
+      margin-bottom: 25px;
+    }
+
+    &_text {
+      @include text($gunmetal);
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@include media-lg {
+  .hero {
+    flex-direction: row;
+    height: 60vh;
+    margin-bottom: 150px;
+    &-content {
+      &_title {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      &_text {
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@include media-xl {
+  .hero {
+    margin-bottom: 170px;
+    &-content {
+      &_title {
+        font-size: 40px;
+        margin-bottom: 25px;
+      }
+
+      &_text {
+        font-size: 16px;
+        margin-bottom: 35px;
+        padding-right: 100px;
+      }
+      .button-gradient {
+        font-size: 18px;
+      }
+    }
+  }
+}
