@@ -480,6 +480,13 @@
     font-size: 24px;
   }
 }
+.projectP {
+  height: auto;
+  overflow-y: hidden;
+}
+.projectP-transition {
+  animation: transalat 7.3s ease-in;
+}
 .projectP-title {
   font-family: "Bruno Ace SC", sans-serif;
   font-size: 34px;
@@ -489,10 +496,14 @@
   text-align: center;
   margin-bottom: 30px;
 }
+.projectP-list {
+  margin-bottom: 50px;
+}
 .projectP-list_content {
   background: #bfdbf7;
   border-radius: 25px;
   position: relative;
+  margin-bottom: 25px;
 }
 .projectP-list_content-video {
   display: none;
@@ -520,8 +531,8 @@
 }
 .projectP-list_content-thumbnail .play {
   position: absolute;
-  top: 60px;
-  left: 135px;
+  top: 38%;
+  left: 40%;
   width: 50px;
 }
 .projectP-list_content-desc {
@@ -552,6 +563,22 @@
   flex-wrap: wrap;
 }
 
+@keyframes transalat {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 768px) {
   .projectP-list {
     display: flex;
@@ -560,7 +587,7 @@
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 0 0 50px 0;
   }
   .projectP-list_content {
     width: 290px;

@@ -411,7 +411,7 @@ export const socials = [
   {
     id: "0",
     content: <BsLinkedin />,
-    url: "#",
+    url: "https://www.linkedin.com/in/aymane-er-rrahmani-27502522a",
   },
   {
     id: "1",
@@ -421,7 +421,7 @@ export const socials = [
   {
     id: "2",
     content: <BsFacebook />,
-    url: "#",
+    url: "https://www.facebook.com/profile.php?id=100008360777807&mibextid=LQQJ4d",
   },
 ];
 

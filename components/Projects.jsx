@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { staggerContainer, textVariant2 } from "@/utils/motion";
+import { staggerContainer } from "@/utils/motion";
 import ProjectCard from "./subcomponent/ProjectCard";
 import { homePageProjects } from "@/constants";
 import { Title } from "./subcomponent/CustomComponents";

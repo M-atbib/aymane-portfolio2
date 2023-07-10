@@ -27,13 +27,19 @@ const Footer = () => {
           </p>
 
           <div className="flex flex-row gap-[20px] text-2xl text-gunmetal">
-            <Link href="#" className="duration-500 hover:scale-90">
+            <Link
+              href="https://www.linkedin.com/in/aymane-er-rrahmani-27502522a"
+              className="duration-500 hover:scale-90"
+            >
               <BsLinkedin />
             </Link>
             <Link href="#" className="duration-500 hover:scale-90">
               <BsInstagram />
             </Link>
-            <Link href="#" className="duration-500 hover:scale-90">
+            <Link
+              href="https://www.facebook.com/profile.php?id=100008360777807&mibextid=LQQJ4d"
+              className="duration-500 hover:scale-90"
+            >
               <BsFacebook />
             </Link>
           </div>

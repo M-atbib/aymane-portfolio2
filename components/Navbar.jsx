@@ -6,14 +6,20 @@ import { motion } from "framer-motion";
 import { navVariants } from "@/utils/motion";
 import { logo } from "@/assets";
 import { navLinks, socials } from "@/constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
+  const path = usePathname();
 
   const handleShowNav = () => {
     setShowNav(!showNav);
   };
+
+  useEffect(() => {
+    setShowNav(false);
+  }, [path]);
 
   return (
     <motion.nav
@@ -22,7 +28,6 @@ const Navbar = () => {
       whileInView="show"
       className="navbar"
     >
-      <div className="" />
       <div className="navbar-content">
         <Link href="/">
           <Image src={logo} className="img" alt="logo" priority />
@@ -44,7 +49,12 @@ const Navbar = () => {
 
           <div className="navbar-content_items-socials">
             {socials.map(({ id, content, url }) => (
-              <Link href={url} className="social" key={id}>
+              <Link
+                href={url}
+                className="social"
+                key={id}
+                onClick={() => setShowNav(false)}
+              >
                 {content}
               </Link>
             ))}
